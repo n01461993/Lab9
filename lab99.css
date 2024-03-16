@@ -1,0 +1,77 @@
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.gallery{
+    min-height: 100vh;
+    background-color: rgba(30, 68, 90, 0.836);
+    padding-bottom: 100px;
+
+}
+
+.gallery .select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding:20px 0;
+    list-style: none;
+}
+
+.gallery .select .buttons{
+    height: 40px;
+    width: 140px;
+    background: #fff;
+    color: #667;
+    font-size: 20px;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 20px;
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+    text-align: center;
+    border-radius: 4px;
+}
+
+.gallery .select .buttons.active{
+    background: rgb(0, 0, 0);
+    color: #fff;
+}
+
+.gallery .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.gallery .container .image{
+    height:400px;
+    width: 500px;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 7px rgba(0,0,0,.3);
+    margin: 20px;
+    border-radius: 4px;
+}
+
+.gallery .container .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    transition: 1s ease;
+
+}
+
+.gallery .container .image:hover img{
+    opacity: 1;
+    transition: 1s ease;
+    transform: scale(1.1);
+}

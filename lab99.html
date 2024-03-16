@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Photo Gallery</title>
+    <link rel="stylesheet" href="lab99.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+</head>
+<body>
+    <div class="gallery">
+        <h1>Image Gallery</h1>
+        <ul class="select">
+            <li class="buttons active" data-filters="all">All</li>
+            <li class="buttons" data-filters="basins">Basin</li>
+            <li class="buttons" data-filters="puppies">Puppies</li>
+            <li class="buttons" data-filters="ships">Ships</li>
+            <li class="buttons" data-filters="japanese">Japanese</li>
+        </ul>
+    
+        <div class="container">
+        
+        <a href="/basin.jpg" class="image basins">
+            <img src="/basin.jpg" alt="">
+        </a>
+        <a href="/puppy.jpg" class="image puppies">
+            <img src="/puppy.jpg" alt="">
+        </a>
+        <a href="/ship.jpg" class="image ships">
+            <img src="/ship.jpg" alt="">
+        </a>
+        <a href="/japan.jpg" class="image japanese">
+            <img src="/japan.jpg" alt="">
+        </a>
+    
+        </div>
+    </div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $('.buttons').click(function(){
+
+                $(this).addClass('active').siblings().removeClass('active');
+
+                var filter = $(this).attr('data-filters')
+
+                if(filter == 'all'){
+                    $('.image').show(400);
+                }else{
+                    $('.image').not('.'+filter).hide(200);
+                    $('.image').filter('.'+filter).show(400);
+                }
+            });
+
+            $('.gallery').magnificPopup({
+                delegate:'a',
+                type:'image',
+                gallery:{
+                    enabled:true
+                }
+            })
+        });
+    </script>
+</body>
+</html>
